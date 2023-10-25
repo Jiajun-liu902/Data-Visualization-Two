@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+  <title>FIT3179 Project 2</title>
+
+
+
+</head>
+<body>
+
+  <div class="page">
+     <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+        <h1 style="color: rgb(103, 198, 219); text-align: center;">Population Density of Countries in different years</h1>
+        <p class="left-align">Dear tourists,<br>
+          <br>Welcome to visit our data visualization portfolio. Now, we are going to analysis the growing trend of the global population during<b> recent years.</b> The growth of the population could not only provide <b>sufficient labour force</b> in each country for industry and manufacturing, it also have a great impact on the <b>economic growth and sustainable human development</b>.
+          <br>
+          <br>
+        Firstly, this choropleth map used different brightness of the colour to encode the population density of each country. It is important to note that <b>the population density was relied on the local climate, terrain and environment of each country</b>.
+        In addition, sometimes, it also showed the correlation between certain country and its neighbourhoods. After that, the filter indicated the population density in different years.
+      </p>
+      </div>
+     </div>
+
+      <div class="pure-u-2-3">
+        <div id="choropleth_map" ></div>
+      </div>
+
+      <div class="pure-u-1-1">
+        <p class="left-align">
+          Secondly, the bar chart has illustrated the population density in different continents. It clearly showed that which continent is <b>more suitable for human to living in</b>.
+        <br>Finally, in appendix, it has one addition pie chart and it clearly showed the percentage of each continent population among the whole world.<br>
+        </p>
+      </div>
+    
+
+        <div class="pure-u-1-2">
+          <div id="bar_chart" class="bar-vis-container"></div>
+        </div>
+    
+    <div class="pure-u-1-2">
+      <div id="pie_chart" class="pie-vis-container"></div>
+    </div>
+
+  </div>
+
+    <div class="pure-g">
+    <div class="pure-u-1-1"></div>
+    <div id="line_chart" class="line-vis-container"></div>
+  </div>
+
+
+
+
+<div class="description description-left">
+  <p class="left-align">
+    In conclusion, the growth of the population is not only <b>reducing the living space per capita</b>, but also <b>make some challenges to the sustainable development of the economic and environment</b>. Due to the extractive resources is reducing throughout the years. 
+  </p>
+  <p class="left-align">
+ 
+  </p>
+
+</div>
+</div>
+
+
+    <!-- end pure grid group -->
+
+     <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p class="center"> This visualisation is created by Jiajun Liu</a>. The datasource is <a href="https://www.kaggle.com/datasets/iamsouravbanerjee/world-population-dataset" target="_blank">Population Density data</href>.</p>
+      </div>
+    </div>
+     <!-- end pure grid group -->
+
+  </div> <!-- end page -->
+
+</div>
+
+<script type="text/javascript">
+  var spec1 = "js/choropleth_map.vg.json";
+  var spec2 = "js/bar_chart.vg.json";
+  var spec3 = "js/pie_chart.vg.json";
+  var spec4 = "js/line_chart.vg.json";
+
+  vegaEmbed('#choropleth_map', spec1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#bar_chart', spec2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+    vegaEmbed('#pie_chart', spec3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#line_chart', spec4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+  
+  
+
+</body>
+
+</html>
