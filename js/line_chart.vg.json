@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Population from 2000 to 2022 in Aisa, Africa and Europe",
+    "fontSize": 18  
+  },
+  "width": 900,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Jiajun-liu902/Data-Visualization-Two/main/line_chart_three_continent.csv"
+  },
+
+  
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true, 
+        "color": "continent", 
+        "size": 2 
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "skyblue"  
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "title": "Population"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal",
+          "title": "Continent"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "continent",
+        "size": 100 
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "Population",
+            "type": "quantitative",
+            "title": "Population"
+          }
+        ]
+      }
+    }
+  ]
+}
