@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 150,
+  "title": "Population in six continents",
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Jiajun-liu902/Data-Visualization-Two/main/bar_chart%26pie_chart.csv"
+  },
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2022,
+      "bind": {
+        "input": "select",
+        "options": [
+          2000,
+          2010,
+          2015,
+          2020,
+          2022
+        ],
+        "labels": [
+          "2000",
+          "2010",
+          "2015",
+          "2020",
+          "2022"
+        ],
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.Year == Year_selection"
+    } 
+  ],
+  "encoding": {
+    "y": {
+      "field": "Continent",
+      "type": "nominal",
+      "axis": {
+        "grid": false
+      }
+    },
+    "x": {
+      "field": "Population",
+      "type": "quantitative",
+      "axis": {
+        "grid": false
+      }
+    },
+    "tooltip": [
+        {
+            "field": "Continent",
+            "type": "nominal",
+            "title": "Continent"
+        },
+        {
+            "field": "Population",
+            "type": "quantitative",            
+            "title": "Population"
+        }   
+            ]
+  },
+  "layer": [
+    {
+      "mark": "bar"
+    }
+    
+  ]
+}
